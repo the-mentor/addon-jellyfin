@@ -1,0 +1,38 @@
+{
+  "name": "Jellyfin",
+  "version": "dev",
+  "slug": "jellyfin",
+  "description": "Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.",
+  "url": "https://github.com/hassio-addons/addon-jellyfin",
+  "webui": "http://[HOST]:[PORT:8096]",
+  "startup": "services",
+  "arch": ["aarch64", "amd64", "armv7", "i386"],
+  "map": ["media:rw", "share:rw", "ssl"],
+  "boot": "auto",
+  "ports": {
+    "8096/tcp": 8096,
+    "8920/tcp": 8920,
+    "1900/udp": 1900,
+    "7359/udp": 7359
+  },
+  "ports_description": {
+    "8096/tcp": "is used by default for HTTP traffic",
+    "8920/tcp": "is used by default for HTTPS traffic",
+    "1900/udp": "is used for service auto-discovery. This is not configurable.",
+    "7359/udp": "is also used for auto-discovery. This is not configurable."
+
+  },
+  "hassio_api": true,
+  "hassio_role": "default",
+  "homeassistant_api": false,
+  "host_network": false,
+  "options": {
+    "claim_code": "",
+    "webtools": false
+  },
+  "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
+    "claim_code": "str",
+    "webtools": "bool"
+  }
+}
