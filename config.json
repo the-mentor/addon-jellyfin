@@ -16,23 +16,25 @@
     "7359/udp": 7359
   },
   "ports_description": {
-    "8096/tcp": "is used by default for HTTP traffic",
-    "8920/tcp": "is used by default for HTTPS traffic",
-    "1900/udp": "is used for service auto-discovery. This is not configurable.",
-    "7359/udp": "is also used for auto-discovery. This is not configurable."
-
+    "8096/tcp": "This port is used by default for HTTP traffic.",
+    "8920/tcp": "This port is used by default for HTTPS traffic.",
+    "1900/udp": "This port is used for service auto-discovery. This is not configurable.",
+    "7359/udp": "This port is also used for auto-discovery. This is not configurable."
   },
   "hassio_api": true,
   "hassio_role": "default",
   "homeassistant_api": false,
   "host_network": false,
   "options": {
-    "claim_code": "",
-    "webtools": false
-  },
+    "log_level": "info",
+      "ssl": false,
+      "certfile": "fullchain.pem",
+      "keyfile": "privkey.pem"
+    },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
-    "claim_code": "str",
-    "webtools": "bool"
-  }
+    "ssl": "bool",
+    "certfile": "str",
+    "keyfile": "str"
+	}
 }
